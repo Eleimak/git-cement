@@ -53,4 +53,10 @@ public class ProcessingControllerWEB {
         return "redirect:/web/processing/get/list";
     }
 
+    @RequestMapping("/starting")
+    public String starting() throws IOException, TesseractException {
+        processingServiceFake.identifyDirectory();
+        return "redirect:/web/processing/get/list";
+    }
+
 }
