@@ -45,12 +45,12 @@ public class ProcessingServiceFakeImpl implements IProcessingService {
         tesseract.setDatapath(this.testdata);
         tesseract.setLanguage("digits_comma");
 
-        this.identifyDirectory();
+        //this.identifyDirectory();
     }
 
     public List<Processing> identifyDirectory() throws IOException, TesseractException{
 
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         List<Cadr>  cadrs = cadrService.getAll();
         List<Processing> processings = new ArrayList<>();
