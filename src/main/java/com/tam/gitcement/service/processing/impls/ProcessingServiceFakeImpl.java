@@ -7,6 +7,7 @@ import com.tam.gitcement.service.cadr.impls.CadrServiceFakeImpl;
 import com.tam.gitcement.service.processing.interfaces.IProcessingService;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
+import org.apache.log4j.BasicConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +49,8 @@ public class ProcessingServiceFakeImpl implements IProcessingService {
     }
 
     public List<Processing> identifyDirectory() throws IOException, TesseractException{
+
+        BasicConfigurator.configure();
 
         List<Cadr>  cadrs = cadrService.getAll();
         List<Processing> processings = new ArrayList<>();
